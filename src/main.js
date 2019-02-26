@@ -7,7 +7,7 @@ import { HashRouter as Router , Switch, Route } from "react-router-dom";
 // const history = createHashHistory();
 import store from "./store";
 import api from "@/api";
-import route from './route';
+import router from './router/index.js';
 
 window.api = api;
 
@@ -23,7 +23,7 @@ document.body.style["font-size"] = "20px";
 
 ReactDOM.render(
   <Provider store={store}>
-    {route()}
+    {router()}
   </Provider>,
   document.getElementById("app")
 );
