@@ -10,7 +10,10 @@ let layoutTpl = {
     CommonLayout
 }
 
-export default function() {
+export default function(props) {
+
+    console.log('props'+props);
+
     return (
         <Switch>
             {

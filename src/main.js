@@ -1,19 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { HashRouter as Router } from 'react-router-dom';
-import layoutRouter from '@/layouts'
-import api from '@/api';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider, connect } from "react-redux";
+// import { ConnectedRouter as Router } from "react-router-redux";
+import { createHashHistory } from "history";
+import { HashRouter as Router , Switch, Route } from "react-router-dom";
+// const history = createHashHistory();
+import store from "./store";
+import api from "@/api";
+import route from './route';
 
 window.api = api;
 
-// import '@/pages/Login/Login.less';
-
-import './style/main.less'
+import "./style/main.less";
 
 let clientWidth = document.documentElement.clientWidth;
 
 // document.documentElement.style["font-size"] = clientWidth / 750 * 40 + 'px';
-document.documentElement.style["font-size"] = clientWidth / 1920 * 40 + 'px';
+document.documentElement.style["font-size"] = (clientWidth / 1920) * 40 + "px";
+document.body.style["font-size"] = "20px";
 
-ReactDOM.render( <Router>{layoutRouter()}</Router> , document.getElementById('app'));
 
+
+ReactDOM.render(
+  <Provider store={store}>
+    {route()}
+  </Provider>,
+  document.getElementById("app")
+);

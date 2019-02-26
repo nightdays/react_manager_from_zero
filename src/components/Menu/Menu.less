@@ -1,0 +1,44 @@
+.menu-bar {
+    & > .menu-item > .menu-item-title,
+    & > .menu-list > .menu-list-title {
+      background: #001529;
+    }
+  }
+
+.menu-bar .menu-item-title,
+.menu-bar .menu-list-title {
+  padding: 0 20px;
+  height: 56px;
+  line-height: 56px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  background: #000c17;
+  white-space: nowrap;
+  transition: 0.3s;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    color: #fff;
+    background: #009688;
+  }
+}
+
+.menu-bar .menu-list-submenu{
+  display: none;
+}
+
+.menu-bar .menu-list-submenu.open{
+  display: block;
+}
+
+.menu-bar .menu-item{
+  
+}
+
+.menu-bar .menu-item.active{
+  .menu-item-title{
+    color: #fff;
+    background: #009688;
+  }
+}

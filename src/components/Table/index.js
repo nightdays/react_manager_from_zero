@@ -1,6 +1,7 @@
 import React , {Component} from 'react';
 import Row from './tpl/Row';
 import Col from './tpl/Col'
+import style from './Table.less';
 
 
 class Table extends Component {
@@ -14,27 +15,27 @@ class Table extends Component {
         let columns = children.map((child)=>{
             return child.props;
         })
-        let list = this.props.list;
+        let data = this.props.data || [];
 
         return (
-            <table className="table">
-                <thead>
+            <table className="table" >
+                <thead className="table-header">
                     <tr>
                         {
                             columns.map((column,index)=>{
 
                                 return (
                                     <th key={index}>
-                                        {column.title}
+                                        <div className="cell">{column.title}</div>
                                     </th>
                                 )
                             })
                         }
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="table-body">
                     {
-                        list.map((item,index)=>{
+                        data.map((item,index)=>{
                             return (
                                 <Row columns={columns} data={item} key={index} />
                             )

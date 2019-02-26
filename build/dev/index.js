@@ -9,7 +9,7 @@ const config = require('../../webpack.config');
 const exe = webpack(config);
 
 const devServer = {
-    publicPath: '/assets/',
+    // publicPath: '/assets/',
     contentBase: path.join(__dirname, '../../dist'),
     clientLogLevel: 'none',
     quiet: true,

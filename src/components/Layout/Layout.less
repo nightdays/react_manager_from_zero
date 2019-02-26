@@ -1,0 +1,49 @@
+@basic-color: #009688;
+
+.layout-container {
+  .content-container {
+      position: absolute;
+      top: 60px;
+      bottom:0;
+      left: 240px;
+      right: 0;
+      overflow: hidden;
+  }
+
+  .top-bar {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 60px;
+    padding: 10px 0;
+    line-height: 40px;
+    font-size: 1.125rem;
+    background: @basic-color;
+
+    .logo {
+      margin-left: 20px;
+      height: 100%;
+    }
+
+    .text {
+      position: absolute;
+      height: 60px;
+      line-height: 60px;
+      top: 0;
+      right: 80px;
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+
+  .side-bar {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    bottom: 0;
+    width: 240px;
+    background: #001529;
+  }
+}

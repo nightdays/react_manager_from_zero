@@ -23,7 +23,7 @@ class Col extends Component {
 
         return (
             <td className="col">
-                {content}
+                <div className="cell">{content}</div>
             </td>
         )
     }

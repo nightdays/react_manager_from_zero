@@ -1,5 +1,5 @@
 
-const BASE = "http://www.nightdays.net/test/"
+const BASE = "http://www.nightdays.net/special/"
 
 const request = (url , method)=>{
 
@@ -13,13 +13,13 @@ const request = (url , method)=>{
             })
         }
 
-        return fetch(BASE + url ,options);
+        return fetch(BASE + url ,options).then(function(response){return response.json()});
     }
 }
 
 
 const api = {
-    userList : request('standard/queryA' , 'post')
+    specialList : request('list', "post")
 }
 
 export default api;
