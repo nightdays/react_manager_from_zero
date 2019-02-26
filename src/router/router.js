@@ -1,6 +1,6 @@
 import Login from '@/pages/Login';
-import User from '@/pages/User';
-import System from '@/pages/System';
+import Special from '@/pages/Special';
+import Survey from '@/pages/Survey';
 
 let route = [
     {
@@ -16,14 +16,14 @@ let route = [
         layout : 'CommonLayout',
     },
     {
-        path: '/user',
-        component: User,
-        layout : 'CommonLayout'
+        path: '/special',
+        component: Special,
+        layout : 'MainLayout'
     },
     {
-        path: '/system',
-        component: System,
-        layout : 'CommonLayout'
+        path: '/survey',
+        component: Survey,
+        layout : 'MainLayout'
     }
 ]
 

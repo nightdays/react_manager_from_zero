@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import style from "./Layout.less";
+import style from "./MainLayout.less";
 
 import logo from "@/images/common/mobile-logo.png";
 

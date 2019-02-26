@@ -17,7 +17,11 @@ class CommonLayout extends Component {
     }
   }
 
-  render() { 
+  render(){
+    return <div>{this.props.children}</div>
+  }
+
+  renderX() { 
     let location = this.props.location;
 
     return (

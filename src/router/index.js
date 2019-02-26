@@ -1,33 +1,37 @@
-import React, { Component } from "react";
-import Login from "@/pages/Login";
-import Special from "@/pages/Special";
-import Survey from "@/pages/Survey";
-// import System from "@/pages/System";
+import React from 'react';
+import LoginLayout from '@/layouts/LoginLayout';
+import CommonLayout from '@/layouts/CommonLayout';
+import MainLayout from '@/layouts/MainLayout';
+import { builder } from '@/util/tool';
+import routerList from './router.js';
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 import { connect } from "react-redux";
 
-class Test extends Component {
-    render() {
-        return (
-        <Router>
-            <Switch>
-            <Route path="/"  component={Login} exact />
-                <Route path="/login" component={Login} />
-                <Route path="/special" component={Special} />
-                <Route path="/survey" component={Survey} />
-            </Switch>
-        </Router>)
-    }
-    
+let layoutTpl = {
+    LoginLayout,
+    CommonLayout,
+    MainLayout
 }
 
-
-const router = ()=>{
+export default function(props) {
     return (
-        <Test />
+        <Router>
+        <Switch>
+            {
+                routerList.map((router , index)=>{
+
+                    let layout = layoutTpl[router.layout];
+                    if(layout) {
+                        let comp = builder(layout , router.component);
+                        return <Route path={router.path} component={comp} key={'route'+index} exact={router.exact} />
+                    }else {
+                        return null;
+                    }
+                })
+            }
+            
+        </Switch>
+        </Router>   
     )
-
 }
-
-export default router;

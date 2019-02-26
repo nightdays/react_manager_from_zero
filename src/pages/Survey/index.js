@@ -4,10 +4,6 @@ import { connect } from "react-redux";
 
 import style from "./survey.less";
 
-import logoBg from "@/images/login/logo.png";
-
-import Layout from "@/components/Layout";
-
 import Table from "@/components/Table";
 
 class Survey extends React.Component {
@@ -17,7 +13,6 @@ class Survey extends React.Component {
 
   render() {
     return (
-      <Layout history={this.props.history}>
         <div className="survey-page-container">
 
           <div>
@@ -33,7 +28,6 @@ class Survey extends React.Component {
             <Table.Column dataIndex="h" title="操作" />
           </Table>
         </div>
-      </Layout>
     );
   }
 }
